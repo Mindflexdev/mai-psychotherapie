@@ -41,7 +41,7 @@
 
     /* Header */
     header { border-bottom: 1px solid var(--line); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 26px 0; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 26px; padding-bottom: 26px; }
     .wordmark { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink); }
     nav { display: flex; align-items: center; gap: 36px; }
     nav a { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); }
@@ -49,7 +49,7 @@
     nav .btn { font-size: 13px; padding: 13px 24px; color: var(--bg); }
 
     /* Hero */
-    .hero { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: center; padding: 84px 0 96px; }
+    .hero { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: center; padding-top: 84px; padding-bottom: 96px; }
     .hero h1 { font-size: clamp(42px, 6vw, 74px); font-weight: 500; line-height: 1.06; letter-spacing: -0.01em; }
     .hero-col { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
     .hero-sub { font-size: 19px; line-height: 1.65; color: var(--muted); max-width: 520px; }
@@ -60,13 +60,13 @@
 
     /* Credentials strip */
     .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-alt); }
-    .strip-inner { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; gap: 32px; flex-wrap: wrap; }
+    .strip-inner { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; padding-bottom: 30px; gap: 32px; flex-wrap: wrap; }
     .strip-item { font-size: 14px; font-weight: 600; letter-spacing: 0.06em; color: var(--muted); }
     .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--accent); opacity: 0.7; flex: none; }
 
     /* Sections */
     section { scroll-margin-top: 40px; }
-    .two-col { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; padding: 110px 0; }
+    .two-col { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; padding-top: 110px; padding-bottom: 110px; }
     .col-text { display: flex; flex-direction: column; gap: 26px; }
     h2 { font-size: clamp(30px, 4vw, 46px); font-weight: 500; line-height: 1.15; }
     .body-text { font-size: 17px; line-height: 1.75; color: var(--body); }
@@ -84,7 +84,7 @@
     .cv-row span { font-size: 14px; color: var(--soft); text-align: right; }
 
     /* Ansatz */
-    .ansatz { background: var(--bg-section); border-top: 1px solid rgba(51,41,30,0.1); padding: 110px 0; }
+    .ansatz { background: var(--bg-section); border-top: 1px solid rgba(51,41,30,0.1); padding-top: 110px; padding-bottom: 110px; }
     .ansatz-head { display: flex; flex-direction: column; gap: 22px; max-width: 720px; margin-bottom: 56px; }
     .ansatz-head .body-text { font-size: 18px; line-height: 1.7; }
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -102,7 +102,7 @@
     .detail p { font-size: 16.5px; line-height: 1.75; color: var(--body); max-width: 900px; }
 
     /* Ablauf */
-    .ablauf { padding: 110px 0; }
+    .ablauf { padding-top: 110px; padding-bottom: 110px; }
     .ablauf-head { display: flex; flex-direction: column; gap: 22px; margin-bottom: 56px; }
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; }
     .step { display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(51,41,30,0.2); padding-top: 28px; }
@@ -143,15 +143,15 @@
       nav.open { display: flex; flex-direction: column; position: absolute; top: 78px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 24px; gap: 22px; z-index: 10; }
       header { position: relative; }
       .menu-btn { display: block; background: none; border: none; cursor: pointer; padding: 4px; }
-      .hero { grid-template-columns: 1fr; padding: 48px 0 40px; gap: 24px; }
+      .hero { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 40px; gap: 24px; }
       .hero-img { justify-self: stretch; width: 100%; }
       .hero-img img { width: 100%; height: 420px; }
       .strip-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
       .strip-inner .dot { display: none; }
-      .two-col, .kontakt .two-col { grid-template-columns: 1fr; gap: 32px; padding: 64px 0; }
+      .two-col, .kontakt .two-col { grid-template-columns: 1fr; gap: 32px; padding-top: 64px; padding-bottom: 64px; }
       .about2 img { height: 380px; }
       .cards, .steps { grid-template-columns: 1fr; gap: 20px; }
-      .ansatz, .ablauf { padding: 64px 0; }
+      .ansatz, .ablauf { padding-top: 64px; padding-bottom: 64px; }
       .card { padding: 28px 26px; }
       .detail { padding: 30px 26px; }
       .quote-inner { padding: 72px 24px; }
