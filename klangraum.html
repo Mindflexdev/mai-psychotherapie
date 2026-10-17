@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Felix Mai · Klangraum</title>
+  <meta name="description" content="Klangreisen mit Handpan, Gitarre und Trommel, Atemreisen und Zeremonien mit Felix Mai. Getrennt von der psychotherapeutischen Praxis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@400;500;600;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F2E9;
+      --bg-alt: #EFE7D8;
+      --card: #FBF7EF;
+      --ink: #33291E;
+      --body: #55483A;
+      --muted: #6E6050;
+      --soft: #8A7A61;
+      --accent: #6C7542;
+      --accent-strong: #6C7542;
+      --cream: #F7F2E9;
+      --line: rgba(51,41,30,0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Karla', 'Gill Sans', 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--ink); }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); }
+    .accent-i { font-style: italic; color: var(--accent); }
+    .btn { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream); background: var(--accent); padding: 18px 34px; border-radius: 999px; transition: background 0.2s; }
+    .btn:hover { background: #59622F; color: var(--cream); }
+    .body-text { font-size: 17px; line-height: 1.75; color: var(--body); }
+    h2 { font-size: clamp(30px, 4vw, 46px); font-weight: 500; line-height: 1.15; }
+    .ph { background: rgba(108,117,66,0.14); border-radius: 4px; padding: 0 4px; }
+
+    /* Draft banner */
+    .draft { background: #B4532A; color: #fff; text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; padding: 10px 16px; }
+
+    header { border-bottom: 1px solid var(--line); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 26px; padding-bottom: 26px; gap: 16px; }
+    .wordmark { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 600; color: var(--ink); }
+    .wordmark span { font-style: italic; color: var(--accent); font-weight: 500; }
+    header nav { display: flex; align-items: center; gap: 36px; }
+    header nav a { font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); }
+    header nav a:hover, header nav a.current { color: var(--accent); }
+    header nav .btn { font-size: 13px; padding: 13px 24px; color: var(--cream); }
+    .menu-btn { display: none; }
+
+    .hero { padding-top: 96px; padding-bottom: 96px; display: grid; grid-template-columns: 7fr 5fr; gap: 56px; align-items: center; }
+    .hero h1 { font-size: clamp(42px, 6vw, 76px); font-weight: 500; line-height: 1.05; }
+    .hero-col { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+    .hero-sub { font-size: 19px; line-height: 1.65; color: var(--muted); max-width: 540px; }
+    .waves { color: var(--accent); width: 100%; max-width: 420px; justify-self: end; }
+
+    .offers { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-top: 110px; padding-bottom: 110px; }
+    .offers-head { display: flex; flex-direction: column; gap: 22px; max-width: 720px; margin-bottom: 56px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .card { background: var(--card); border-radius: 16px; padding: 40px 36px; display: flex; flex-direction: column; gap: 16px; cursor: pointer; border: none; text-align: left; font: inherit; color: inherit; transition: transform 0.15s; }
+    .card:hover { transform: translateY(-3px); }
+    .card .more { font-size: 14px; font-weight: 700; color: var(--accent); margin-top: auto; }
+    .card.active { background: var(--accent); }
+    .card.active svg, .card.active h3, .card.active .more { color: var(--cream); }
+    .card.active p { color: rgba(247,242,233,0.85); }
+    .card svg { width: 32px; height: 32px; color: var(--accent); }
+    .card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 600; }
+    .card p { font-size: 15.5px; line-height: 1.7; color: var(--muted); }
+
+    .col-text { display: flex; flex-direction: column; gap: 24px; }
+
+    .ritual { padding-top: 110px; padding-bottom: 110px; border-bottom: 1px solid var(--line); }
+    .ritual-head { display: flex; flex-direction: column; gap: 22px; max-width: 760px; margin-bottom: 64px; }
+    .ritual-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; margin-bottom: 80px; }
+    .ritual-item { display: flex; flex-direction: column; gap: 14px; border-top: 1px solid rgba(51,41,30,0.2); padding-top: 28px; }
+    .ritual-item h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; font-weight: 600; color: var(--accent); }
+    .ritual-item p { font-size: 16px; line-height: 1.75; color: var(--body); }
+    .flow-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; font-weight: 500; margin-bottom: 28px; }
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; list-style: none; }
+    .flow li { background: var(--card); border-radius: 16px; padding: 26px 22px; display: flex; flex-direction: column; gap: 10px; }
+    .flow .num { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 40px; color: var(--accent); line-height: 1; }
+    .flow b { font-size: 16px; }
+    .flow p { font-size: 14.5px; line-height: 1.65; color: var(--muted); }
+
+    .note { border-top: 1px solid var(--line); padding-top: 72px; padding-bottom: 72px; }
+    .note-box { border: 1px solid var(--line); border-radius: 16px; padding: 36px 40px; display: flex; flex-direction: column; gap: 14px; max-width: 900px; }
+    .note-box h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 600; color: var(--accent); }
+    .note-box p, .note-box li { font-size: 15px; line-height: 1.7; color: var(--muted); }
+    .note-box ul { padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+
+    .contact { background: var(--accent-strong); }
+    .contact-inner { max-width: 820px; margin: 0 auto; padding: 100px 24px; text-align: center; display: flex; flex-direction: column; gap: 24px; align-items: center; }
+    .contact h2 { color: var(--cream); }
+    .contact .body-text { color: rgba(247,242,233,0.86); }
+    .contact .btn { background: var(--cream); color: #2C241B; }
+    .form { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 18px; text-align: left; }
+    .form[hidden] { display: none; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form label { display: flex; flex-direction: column; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,242,233,0.8); }
+    .form input, .form select, .form textarea { font: inherit; font-size: 16px; letter-spacing: 0; text-transform: none; color: var(--ink); background: var(--cream); border: 1px solid transparent; border-radius: 12px; padding: 14px 16px; width: 100%; }
+    .form textarea { resize: vertical; }
+    .form input:focus, .form select:focus, .form textarea:focus { outline: 2px solid var(--cream); outline-offset: 2px; }
+    .form .consent { flex-direction: row; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 400; letter-spacing: 0; text-transform: none; line-height: 1.5; }
+    .form .consent input { width: 18px; height: 18px; flex: none; margin-top: 2px; padding: 0; }
+    .form .consent a, .contact .alt a { color: var(--cream); text-decoration: underline; }
+    .form .btn { align-self: center; border: none; cursor: pointer; margin-top: 6px; }
+    .contact .sent { font-size: 18px; color: var(--cream); background: rgba(247,242,233,0.14); border-radius: 12px; padding: 18px 24px; }
+    .contact .alt { font-size: 14px; color: rgba(247,242,233,0.75); }
+
+    footer .wrap { padding-top: 34px; padding-bottom: 34px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--soft); }
+    footer a { color: var(--soft); }
+    footer nav { display: flex; gap: 28px; }
+
+    @media (max-width: 900px) {
+      header { position: relative; }
+      header nav { display: none; }
+      header nav.open { display: flex; flex-direction: column; position: absolute; top: 78px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 24px; gap: 22px; z-index: 10; }
+      .menu-btn { display: block; background: none; border: none; cursor: pointer; padding: 4px; }
+      .hero { grid-template-columns: 1fr; padding-top: 56px; padding-bottom: 56px; gap: 32px; }
+      .ritual { padding-top: 64px; padding-bottom: 64px; }
+      .form-row { grid-template-columns: 1fr; }
+      .ritual-grid, .flow { grid-template-columns: 1fr; gap: 28px; }
+      .ritual-grid { margin-bottom: 56px; }
+      .flow { gap: 14px; }
+      .waves { justify-self: start; max-width: 280px; }
+      .offers { padding-top: 64px; padding-bottom: 64px; }
+      .cards { grid-template-columns: 1fr; gap: 20px; }
+      .card { padding: 28px 26px; }
+      .note-box { padding: 26px 22px; }
+      footer .wrap { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+
+<header>
+  <div class="wrap header-inner">
+    <a href="index.html" class="wordmark">Felix Mai</a>
+    <button class="menu-btn" aria-label="Menü öffnen" onclick="document.getElementById('nav').classList.toggle('open')">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7.5h16M4 12h16M4 16.5h16" stroke="#33291E" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="nav">
+      <a href="index.html#ueber-mich">Über mich</a>
+      <a href="index.html#therapie">Therapie</a>
+      <a href="index.html#ablauf">Ablauf</a>
+      <a href="klangraum.html" class="current">Klangraum</a>
+      <a href="#kontakt" class="btn">Anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap hero">
+  <div class="hero-col">
+    <div class="eyebrow">Klang · Atem · Ritual</div>
+    <h1 class="serif">Ankommen<br><span class="accent-i">im Klang.</span></h1>
+    <p class="hero-sub">Klangreisen mit Handpan, Gitarre und Trommel, Atemreisen und Zeremonien: Räume, in denen Sie zur Ruhe kommen, spüren und sich selbst neu begegnen können.</p>
+    <a href="#kontakt" class="btn">Anfrage senden</a>
+  </div>
+  <svg class="waves" viewBox="0 0 400 300" fill="none" aria-hidden="true">
+    <circle cx="200" cy="150" r="118" stroke="currentColor" stroke-width="1.5" opacity="0.35"/>
+    <circle cx="200" cy="150" r="84" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="200" cy="150" r="44" stroke="currentColor" stroke-width="1.5"/>
+    <circle cx="200" cy="150" r="10" fill="currentColor"/>
+    <path d="M20 150c30-40 60 40 90 0s60 40 90 0 60 40 90 0 60 40 90 0" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+  </svg>
+</section>
+
+<section id="angebote" class="offers">
+  <div class="wrap">
+    <div class="offers-head">
+      <div class="eyebrow">Angebote</div>
+      <h2 class="serif">Was ich <span class="accent-i">anbiete</span></h2>
+      <p class="body-text">Die folgenden Angebote sind keine Psychotherapie und keine Heilbehandlung. Sie finden in Gruppen oder einzeln statt und laden zur Selbsterfahrung ein.</p>
+    </div>
+    <div class="cards">
+      <button class="card" data-key="klang" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="6" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="11" r="1" fill="currentColor"/><circle cx="17" cy="11" r="1" fill="currentColor"/><circle cx="12" cy="8" r="1" fill="currentColor"/></svg>
+        <h3>Klangreisen</h3>
+        <p>Liegend lauschen, während Handpan, Gitarre und Trommel den Raum füllen. Eine geführte Reise nach innen, zum Entspannen und Loslassen.</p>
+        <span class="more">Mehr erfahren&nbsp;→</span>
+      </button>
+      <button class="card" data-key="atem" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12c3-4 6 4 9 0s6 4 9 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 7c3-4 6 4 9 0s6 4 9 0M3 17c3-4 6 4 9 0s6 4 9 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/></svg>
+        <h3>Atemreisen</h3>
+        <p>Verbundenes, vertieftes Atmen mit Musik, in einem geschützten und begleiteten Rahmen.</p>
+        <span class="more">Mehr erfahren&nbsp;→</span>
+      </button>
+      <button class="card" data-key="zeremonie" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c2.5 3 4 5.5 4 8a4 4 0 01-8 0c0-2.5 1.5-5 4-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 21h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <h3>Zeremonie</h3>
+        <p>Zeremonielle Abende mit Mapacho, Rapé, Gebet und Klang. Ein bewusster Raum, um anzukommen, sich zu sammeln und eine Absicht zu setzen.</p>
+        <span class="more">Mehr erfahren&nbsp;→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="details" class="wrap ritual">
+<div class="panel" data-panel="klang">
+  <div class="ritual-head">
+    <div class="eyebrow">Klangreisen</div>
+    <h2 class="serif">Eine Reise <span class="accent-i">nach innen.</span></h2>
+    <p class="body-text">Sie liegen bequem, die Augen geschlossen, und lassen sich von Klängen tragen. Der Kopf darf leiser werden, der Körper weich. Viele erleben dabei tiefe Entspannung, innere Bilder oder einfach Ruhe.</p>
+  </div>
+  <div class="ritual-grid">
+    <div class="ritual-item">
+      <h3>Handpan</h3>
+      <p>Warme, schwebende Töne, die an Glocken und Wasser erinnern. Die Handpan öffnet den Raum und lädt zum Loslassen ein.</p>
+    </div>
+    <div class="ritual-item">
+      <h3>Gitarre</h3>
+      <p>Sanfte Melodien und Gesang begleiten den Weg und geben der Reise Halt und Wärme.</p>
+    </div>
+    <div class="ritual-item">
+      <h3>Trommel</h3>
+      <p>Der gleichmäßige Herzschlag der Trommel erdet, bringt in den Körper und kann in tiefere Bewusstseinszustände führen.</p>
+    </div>
+  </div>
+  <div class="flow-title serif">Ablauf einer Klangreise</div>
+  <ol class="flow">
+    <li><span class="num">01</span><b>Ankommen</b><p>Wir kommen an, machen es uns mit Matte und Decke bequem.</p></li>
+    <li><span class="num">02</span><b>Einstimmen</b><p>Eine kurze Atemübung hilft, aus dem Alltag herauszutreten.</p></li>
+    <li><span class="num">03</span><b>Klangreise</b><p>Handpan, Gitarre und Trommel tragen Sie durch die Reise.</p></li>
+    <li><span class="num">04</span><b>Nachklingen</b><p>In der Stille danach darf sich setzen, was sich gezeigt hat.</p></li>
+    <li><span class="num">05</span><b>Teilen</b><p>Wer möchte, teilt zum Abschluss seine Erfahrung.</p></li>
+  </ol>
+</div>
+<div class="panel" data-panel="atem" hidden>
+  <div class="ritual-head">
+    <div class="eyebrow">Atemreisen</div>
+    <h2 class="serif">Der Atem <span class="accent-i">als Weg.</span></h2>
+    <p class="body-text">Bei einer Atemreise atmen Sie über längere Zeit verbunden und vertieft, ohne Pause zwischen Ein- und Ausatmen, begleitet von Musik. So können sich Gefühle, Erinnerungen und Spannungen lösen, die im Alltag keinen Raum finden.</p>
+  </div>
+  <div class="ritual-grid">
+    <div class="ritual-item">
+      <h3>Verbundenes Atmen</h3>
+      <p>Der Atem fließt kreisförmig und etwas tiefer als gewohnt. Sie bestimmen selbst, wie weit Sie gehen.</p>
+    </div>
+    <div class="ritual-item">
+      <h3>Musik</h3>
+      <p>Live-Klänge und ausgewählte Musik tragen die Reise, mal kraftvoll und treibend, mal ruhig und weit.</p>
+    </div>
+    <div class="ritual-item">
+      <h3>Begleitung</h3>
+      <p>Ich bin die ganze Zeit präsent, halte den Raum und begleite Sie, wenn Sie Unterstützung brauchen.</p>
+    </div>
+  </div>
+  <div class="flow-title serif">Ablauf einer Atemreise</div>
+  <ol class="flow">
+    <li><span class="num">01</span><b>Ankommen</b><p>Wir lernen uns kennen und besprechen, was Sie erwartet.</p></li>
+    <li><span class="num">02</span><b>Absicht</b><p>Sie finden eine persönliche Absicht für die Reise.</p></li>
+    <li><span class="num">03</span><b>Atmen</b><p>Verbundenes Atmen mit Musik, im eigenen Tempo.</p></li>
+    <li><span class="num">04</span><b>Ruhen</b><p>Der Atem wird wieder natürlich, der Körper ruht nach.</p></li>
+    <li><span class="num">05</span><b>Teilen</b><p>Wir teilen, was sich gezeigt hat, und schließen den Kreis.</p></li>
+  </ol>
+</div>
+<div class="panel" data-panel="zeremonie" hidden>
+  <div class="ritual-head">
+    <div class="eyebrow">Zeremonie</div>
+    <h2 class="serif">Mit <span class="accent-i">Respekt</span> vor der Pflanze.</h2>
+    <p class="body-text">In meinen Zeremonien arbeite ich mit Tabak als heiliger Pflanze, so wie sie in den Traditionen des Amazonas seit Generationen geehrt wird. Tabak ist hier kein Genussmittel, sondern ein Begleiter für Gebet, Klarheit und Verbindung.</p>
+  </div>
+
+  <div class="ritual-grid">
+    <div class="ritual-item">
+      <h3>Mapacho</h3>
+      <p>Mapacho (<i>Nicotiana rustica</i>) ist ein ursprünglicher, sehr kräftiger Naturtabak. Die Zigarre rauchen wir gemeinsam im Kreis, getragen von heiligen Gebeten. So wird jeder Zug selbst zum Gebet: Der Rauch trägt unsere Absichten, reinigt und verbindet.</p>
+    </div>
+    <div class="ritual-item">
+      <h3>Gebet</h3>
+      <p>Jede Zeremonie beginnt und endet mit Gebet: für jeden Menschen im Kreis, für seine Absicht und für das, was gerade gesehen werden möchte. Gebet heißt hier nicht Religion, sondern ehrliche Hinwendung, in Worten, in Stille und im Gesang.</p>
+    </div>
+    <div class="ritual-item">
+      <h3>Rapé</h3>
+      <p>Rapé ist ein fein gemahlenes Pulver aus Tabak und Pflanzenasche. Ich gebe es mit dem Tepi, einem traditionellen Blasrohr, in die Nase. Ich arbeite mit einem ganz besonderen, kraftvollen Rapé, das tiefe Transformation anstoßen kann. Die Gabe selbst ist ein heiliges Gebet, und die Erfahrung kann bis zu ein bis zwei Stunden andauern. Die Teilnahme ist immer freiwillig.</p>
+    </div>
+  </div>
+
+  <div class="flow-title serif">Ablauf eines Abends</div>
+  <ol class="flow">
+    <li><span class="num">01</span><b>Ankommen</b><p>Wir kommen im Kreis an, lernen uns kennen und besprechen den Rahmen.</p></li>
+    <li><span class="num">02</span><b>Absicht</b><p>Jede und jeder findet eine persönliche Absicht für den Abend.</p></li>
+    <li><span class="num">03</span><b>Gebet &amp; Tabak</b><p>Wir rauchen Mapacho gemeinsam im Gebet, danach Rapé für alle, die möchten (bis zu 1–2 Stunden).</p></li>
+    <li><span class="num">04</span><b>Klang</b><p>Handpan, Gitarre, Trommel und Gesang tragen die Stille danach.</p></li>
+    <li><span class="num">05</span><b>Teilen</b><p>Zum Abschluss teilen wir, was sich gezeigt hat, und schließen den Kreis.</p></li>
+  </ol>
+</div>
+</section>
+
+<section class="wrap note">
+  <div class="note-box">
+    <h3>Wichtig zu wissen</h3>
+    <p>Die Angebote im Klangraum sind <b>keine Psychotherapie</b>, keine Heilbehandlung und kein Ersatz für ärztliche oder psychotherapeutische Behandlung. Sie sind von meiner psychotherapeutischen Praxis getrennt. Die Teilnahme erfolgt in Eigenverantwortung.</p>
+    <p>Atemreisen und Zeremonien sind nicht geeignet unter anderem bei:</p>
+    <ul>
+      <li>Herz-Kreislauf-Erkrankungen, Bluthochdruck, Epilepsie</li>
+      <li>Schwangerschaft und Stillzeit</li>
+      <li>Nikotin-Unverträglichkeit: Mapacho und Rapé enthalten deutlich mehr Nikotin als gewöhnlicher Tabak und können Übelkeit, Schwindel oder Erbrechen auslösen</li>
+      <li>akuten psychischen Krisen oder psychotischen Erkrankungen</li>
+    </ul>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="contact-inner">
+    <div class="eyebrow" style="color:rgba(247,242,233,0.75)">Kontakt</div>
+    <h2 class="serif">Lust auf <span style="font-style:italic">Klang?</span></h2>
+    <p class="body-text">Schreiben Sie mir, wenn Sie an einer Klangreise, Atemreise oder Zeremonie teilnehmen möchten.</p>
+    <form class="form" action="https://formsubmit.co/felix.mai3@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Neue Anfrage über den Klangraum">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://mai-therapie.de/klangraum.html?gesendet=1#kontakt">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <label>Name<input type="text" name="Name" required autocomplete="name"></label>
+        <label>E-Mail<input type="email" name="email" required autocomplete="email"></label>
+      </div>
+      <label>Interesse an
+        <select name="Angebot">
+          <option>Klangreise</option>
+          <option>Atemreise</option>
+          <option>Zeremonie</option>
+          <option>Etwas anderes</option>
+        </select>
+      </label>
+      <label>Nachricht<textarea name="Nachricht" rows="5" required></textarea></label>
+      <label class="consent"><input type="checkbox" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden (siehe <a href="datenschutz.html">Datenschutz</a>).</span></label>
+      <button type="submit" class="btn">Anfrage senden</button>
+    </form>
+    <p class="sent" id="sent" hidden>Danke für Ihre Nachricht! Ich melde mich bald bei Ihnen.</p>
+    <p class="alt">Oder direkt per E-Mail: <a href="mailto:felix.mai3@gmail.com?subject=Klangraum">felix.mai3@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Felix Mai · Klangraum</div>
+    <nav>
+      <a href="index.html">Psychotherapie</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  function pick(key, scroll) {
+    document.querySelectorAll('.card').forEach(function (c) { c.classList.toggle('active', c.dataset.key === key); });
+    document.querySelectorAll('.panel').forEach(function (p) { p.hidden = p.dataset.panel !== key; });
+    if (scroll) document.getElementById('details').scrollIntoView({ behavior: 'smooth' });
+  }
+  document.querySelectorAll('.card').forEach(function (c) {
+    c.addEventListener('click', function () { pick(c.dataset.key, true); });
+  });
+  pick('klang', false);
+  if (/[?&]gesendet=1/.test(location.search)) { document.getElementById('sent').hidden = false; document.querySelector('.form').hidden = true; }
+  document.querySelectorAll('#nav a').forEach(function (a) {
+    a.addEventListener('click', function () { document.getElementById('nav').classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
